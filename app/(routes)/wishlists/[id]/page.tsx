@@ -1,7 +1,7 @@
 import { WishCard } from "@/app/components/WishCard";
 import { connectDB } from "@/app/lib/db";
 import { Wish } from "@/app/models/Wish";
-import { WishList, WishListType } from "@/app/models/WishList";
+import { WishList } from "@/app/models/WishList";
 
 type WishesByWishlistProps = {
   params: Promise<{

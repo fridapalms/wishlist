@@ -1,5 +1,4 @@
-import { AddWish } from "../components/AddWish";
-import { AllLists } from "../components/AllLists";
+import { AddWish } from "@/app/components/AddWish";
 
 export default function ListsPage() {
   return (

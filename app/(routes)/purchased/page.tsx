@@ -1,4 +1,4 @@
-import { PurchasedWishes } from "../components/PurchasedWishes";
+import { PurchasedWishes } from "@/app/components/PurchasedWishes";
 
 export default function CategoryPage() {
   return (

@@ -1,5 +1,3 @@
-"use server";
-
 import { createCategory } from "../actions/categoryActions";
 
 export const AddCategory = async () => {

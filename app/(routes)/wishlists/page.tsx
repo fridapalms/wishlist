@@ -1,4 +1,4 @@
-import { AllLists } from "../components/AllLists";
+import { AllLists } from "@/app/components/AllLists";
 
 export default function ListsPage() {
   return (

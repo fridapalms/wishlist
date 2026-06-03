@@ -1,5 +1,3 @@
-"use server";
-
 import { createWish } from "../actions/wishActions";
 import { getCategories } from "../services/getCategories";
 import { getWishlists } from "../services/getWishlists";

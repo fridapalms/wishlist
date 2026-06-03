@@ -1,5 +1,3 @@
-"use server";
-
 import { createWishList } from "../actions/wishListActions";
 
 export const AddWishList = async () => {

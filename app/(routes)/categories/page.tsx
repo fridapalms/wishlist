@@ -1,4 +1,4 @@
-import { AllCategories } from "../components/AllCategories";
+import { AllCategories } from "@/app/components/AllCategories";
 
 export default function CategoryPage() {
   return (

@@ -19,12 +19,3 @@ export const createWishList = async (formData: FormData) => {
   //Rendera om
   revalidatePath("/");
 };
-
-export const togglePurchase = async (id: string) => {
-  await connectDB();
-
-  const found = await Wish.findOne({ id });
-  await Wish.updateOne({ id }, { purchased: !found.purchased });
-
-  revalidatePath("/");
-};
