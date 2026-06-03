@@ -1,0 +1,12 @@
+import { connectDB } from "../lib/db";
+import { WishList } from "../models/WishList";
+
+export const getWishlists = async () => {
+  try {
+    await connectDB();
+    return await WishList.find();
+  } catch (error) {
+    console.error("Failed to fetch wishlists: ", error);
+    return [];
+  }
+};
