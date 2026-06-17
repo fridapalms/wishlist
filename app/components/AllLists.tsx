@@ -15,7 +15,7 @@ export const AllLists = async () => {
       {wishlists.map((w) => (
         <div key={w._id}>
           <Link href={`/wishlists/${w._id}`}>
-            <div className="bg-[#BF5048] rounded-sm p-4 flex flex-col justify-center items-center gap-3 w-[300px] h-[300px] text-[#353333]">
+            <div className="bg-[#BF5048] rounded-sm p-4 flex flex-col justify-center items-center gap-3 w-[250px] h-[250px] text-[#353333]">
               <div>
                 <h1 className="font-bold text-3xl text-[#F9F4E7]">{w.name}</h1>
               </div>

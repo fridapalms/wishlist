@@ -26,7 +26,7 @@ const menuItems = [
 
 export const Sidebar = () => {
   return (
-    <div className="bg-[#EEDCDB] flex flex-col gap-9 justify-start items-center lg:items-start pt-8 lg:p-8 text-[#353333] h-screen">
+    <div className="bg-[#EEDCDB] flex flex-col gap-9 justify-start items-center lg:items-start pt-8 lg:p-8 text-[#353333] h-full min-h-screen">
       <Link href={"/add"} className="flex flex-row gap-2 items-center justify-center text-[#BF5048] border p-1.5 transition delay-150 ease-in-out hover:bg-[#DFC6C0]">
         <Plus />
         <span className="hidden lg:block font-semibold">ADD WISH</span>

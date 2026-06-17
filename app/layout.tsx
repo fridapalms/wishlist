@@ -34,7 +34,7 @@ export default function RootLayout({
             <div className="w-1/6">
               <Sidebar />
             </div>
-            <div className="w-5/6 p-6 h-screen bg-[#FAF7F0]">{children}</div>
+            <div className="w-5/6 bg-[#FAF7F0]">{children}</div>
           </div>
           <Footer />
         </main>

@@ -10,7 +10,7 @@ type WishCardProps = {
 
 export const WishCard = ({ w }: WishCardProps) => {
   return (
-    <div className="border border-[#DFC6C0] rounded-sm p-4 flex flex-col gap-3 w-[300px] h-[600px] text-[#353333] justify-between">
+    <div className="border border-[#DFC6C0] rounded-sm p-4 flex flex-col gap-3 w-[250px] h-[600px] text-[#353333] justify-between">
       {w.purchased ? (
         <Link href={w.link} className="flex flex-col gap-3">
           <Image alt={w.title} src={w.imageUrl} width={200} height={200} className="w-70 h-100 object-cover object-top opacity-25"></Image>
