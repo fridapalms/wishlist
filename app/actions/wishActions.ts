@@ -3,7 +3,6 @@
 import { revalidatePath } from "next/cache";
 import { connectDB } from "../lib/db";
 import { Wish } from "../models/Wish";
-import { v4 as uuidv4 } from "uuid";
 
 export const createWish = async (formData: FormData) => {
   //Anslut till databas
@@ -22,7 +21,6 @@ export const createWish = async (formData: FormData) => {
   const categoryId = formData.get("categoryId") as string;
 
   await Wish.create({
-    uuid: uuidv4(),
     title: title,
     price: price,
     link: link,
@@ -41,8 +39,9 @@ export const createWish = async (formData: FormData) => {
 export const togglePurchase = async (id: string) => {
   await connectDB();
 
-  const found = await Wish.findOne({ uuid: id });
-  await Wish.updateOne({ uuid: id }, { purchased: !found.purchased });
+  const found = await Wish.findById(id);
+  if (!found) return;
+  await Wish.findByIdAndUpdate(id, { purchased: !found.purchased });
 
   revalidatePath("/");
 };
@@ -50,7 +49,7 @@ export const togglePurchase = async (id: string) => {
 export const deleteWish = async (id: string) => {
   await connectDB();
 
-  await Wish.findOneAndDelete({ uuid: id });
+  await Wish.findByIdAndDelete(id);
 
   revalidatePath("/");
 };

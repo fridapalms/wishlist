@@ -13,7 +13,7 @@ export const AllWishes = async () => {
   return (
     <div className="flex flex-wrap gap-5 justify-start">
       {wishes.map((w) => (
-        <div key={w.uuid}>
+        <div key={w._id}>
           <WishCard w={w} />
         </div>
       ))}

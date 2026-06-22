@@ -32,7 +32,7 @@ export const WishesByWishlist = async ({ params }: WishesByWishlistProps) => {
       <h3 className="text-[#BF5048] font-semibold text-2xl">{wishlist.name}</h3>
       <div className="flex flex-wrap gap-5">
         {wishes.map((w) => (
-          <div key={w.uuid}>
+          <div key={w._id}>
             <WishCard w={w} />
           </div>
         ))}

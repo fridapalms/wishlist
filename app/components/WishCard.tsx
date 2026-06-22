@@ -33,8 +33,8 @@ export const WishCard = ({ w }: WishCardProps) => {
         </Link>
       )}
       <div className="flex gap-2">
-        <TogglePurchased id={w.uuid} />
-        <DeleteWish id={w.uuid} />
+        <TogglePurchased id={w._id} />
+        <DeleteWish id={w._id} />
       </div>
     </div>
   );
