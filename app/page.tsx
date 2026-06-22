@@ -1,10 +1,9 @@
-import { AllWishes } from "./components/AllWishes";
+import { auth } from "@/auth";
+import { LoginButton } from "./components/LoginButton";
+import { WelcomeMessage } from "./components/WelcomeMessage";
 
-export default function Home() {
-  return (
-    <div className="flex flex-col gap-5 p-6">
-      <h3 className="text-[#BF5048] font-semibold text-2xl">All wishes</h3>
-      <AllWishes />
-    </div>
-  );
+export default async function Home() {
+  const session = await auth();
+
+  return <div className="flex p-6 w-5/6">{session ? <WelcomeMessage /> : <LoginButton />}</div>;
 }

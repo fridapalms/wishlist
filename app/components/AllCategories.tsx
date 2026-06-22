@@ -1,13 +1,14 @@
 import { connectDB } from "../lib/db";
-import { Category, CategoryType } from "../models/Category";
+import { CategoryType } from "../models/Category";
 import Link from "next/link";
+import { getCategories } from "../services/getCategories";
 
 export const AllCategories = async () => {
   //Anslut till databas
   await connectDB();
 
   //Hitta alla wishes i db
-  const categories: CategoryType[] = await Category.find();
+  const categories: CategoryType[] = await getCategories();
 
   //Loopa genom listan och visa dem
   return (

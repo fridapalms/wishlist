@@ -4,7 +4,7 @@ import { Category } from "../models/Category";
 export const getCategories = async () => {
   try {
     await connectDB();
-    return await Category.find();
+    return await Category.find().lean();
   } catch (error) {
     console.error("Failed to fetch categories: ", error);
     return [];

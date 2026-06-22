@@ -2,7 +2,6 @@ import { model, models, Schema } from "mongoose";
 
 //Schema hur wish ska se ut i databasen
 const wishSchema = new Schema({
-  uuid: { type: String, required: true },
   title: { type: String, required: true },
   price: { type: Number, required: true },
   link: { type: String, default: "" },
@@ -10,8 +9,8 @@ const wishSchema = new Schema({
   purchased: { type: Boolean, default: false },
   priority: { type: String, enum: ["low", "medium", "high"], default: "medium" },
   notes: { type: String, default: "" },
-  wishlistId: { type: String, required: true },
-  categoryId: { type: String, required: true },
+  wishlistId: { type: Schema.Types.ObjectId, ref: "wishlist", required: true },
+  categoryId: { type: Schema.Types.ObjectId, ref: "category", required: true },
 });
 
 //Skapar en model
@@ -19,7 +18,7 @@ export const Wish = models.wish || model("wish", wishSchema);
 
 //Skapar en type
 export type WishType = {
-  uuid: string;
+  _id: string;
   title: string;
   price: number;
   link: string;

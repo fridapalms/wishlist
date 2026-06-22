@@ -1,8 +1,10 @@
 import { model, models, Schema } from "mongoose";
+import { UserType } from "./User";
 
 //Schema hur wish ska se ut i databasen
 const wishListSchema = new Schema({
   name: { type: String, required: true },
+  userId: { type: Schema.Types.ObjectId, ref: "user", required: true },
 });
 
 //Skapar en model
@@ -12,4 +14,5 @@ export const WishList = models.wishlist || model("wishlist", wishListSchema);
 export type WishListType = {
   _id: string;
   name: string;
+  userId: string | UserType;
 };
