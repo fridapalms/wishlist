@@ -1,9 +1,8 @@
 export const Navbar = () => {
   return (
-    <div className="w-full bg-[#F9F4E7] flex justify-center p-4">
-      <div className="flex flex-col items-center w-full text-[#BF5048]">
-        <h2 className="text-lg leading-none font-semibold">WISH</h2>
-        <h2 className="text-2xl leading-none font-medium">LIST</h2>
+    <div className="w-full bg-[var(--color-blue)] flex justify-center p-4 border-b-6 border-[var(--color-pink)]">
+      <div className="flex flex-col items-center w-full text-[var(--color-darkred)]">
+        <h2 className="text-2xl leading-none font-semibold">WishList</h2>
       </div>
     </div>
   );

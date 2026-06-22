@@ -29,15 +29,15 @@ const menuItems = [
 export const Sidebar = async () => {
   const session = await auth();
   return (
-    <div className="bg-[#EEDCDB] flex flex-col gap-9 justify-start items-center lg:items-start pt-8 lg:p-8 text-[#353333] h-full min-h-screen">
-      <Link href={"/add"} className="flex flex-row gap-2 items-center justify-center text-[#BF5048] border p-1.5 transition delay-150 ease-in-out hover:bg-[#DFC6C0]">
+    <div className="bg-[var(--color-green)] flex flex-col gap-9 justify-start items-center lg:items-start pt-8 lg:p-8 text-[#353333] h-full min-h-screen">
+      <Link href={"/add"} className="flex flex-row gap-2 items-center justify-center text-[var(--color-darkred)] p-2 transition delay-150 ease-in-out bg-[var(--color-yellow)] hover:bg-[var(--color-red)]">
         <Plus />
         <span className="hidden lg:block font-semibold">ADD WISH</span>
       </Link>
       {menuItems.map((i) => {
         const Icon = i.icon;
         return (
-          <Link key={i.title} href={i.href} className="flex flex-row gap-2 items-center">
+          <Link key={i.title} href={i.href} className="flex flex-row gap-2 items-center text-[var(--color-darkred)]">
             <Icon />
             <span className="hidden lg:block">{i.title}</span>
           </Link>

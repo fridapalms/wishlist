@@ -2,7 +2,17 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #111111;
+  --color-green: #c7d141;
+  --color-darkgreen: #595300;
+  --color-blue: #e1efff;
+  --color-darkblue: #b0d3fe;
+  --color-red: #ba4100;
+  --color-darkred: #5c0007;
+  --color-pink: #ffcbf1;
+  --color-yellow: #fffcb3;
+  --color-borderbeige: #e2d8cc;
+  --color-bgbeige: #fdfaf6;
 }
 
 @theme inline {

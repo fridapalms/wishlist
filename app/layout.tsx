@@ -31,7 +31,7 @@ export default async function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body>
-        <main className="h-screen flex flex-col w-full bg-[#FAF7F0]">
+        <main className="h-screen flex flex-col w-full bg-[var(--color-bgbeige)]">
           <Navbar />
           <div className="flex">
             {session && (
@@ -40,7 +40,7 @@ export default async function RootLayout({
               </div>
             )}
 
-            <div className={session ? "w-5/6 bg-[#FAF7F0]" : "w-full bg-[#FAF7F0] h-screen"}>{children}</div>
+            <div className={session ? "flex w-5/6 bg-[var(--color-bgbeige)]" : "w-full h-screen bg-[var(--color-bgbeige)]"}>{children}</div>
           </div>
           <Footer />
         </main>

@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { TogglePurchased } from "./TogglePurchased";
 import { DeleteWish } from "./DeleteWish";
-import { Star } from "lucide-react";
 import { PriorityLow } from "./PriorityLow";
 import { PriorityMedium } from "./PriorityMedium";
 import { PriorityHigh } from "./PriorityHigh";
