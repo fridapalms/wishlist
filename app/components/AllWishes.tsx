@@ -7,7 +7,7 @@ export const AllWishes = async () => {
   await connectDB();
 
   //Hitta alla wishes i db
-  const wishes = await Wish.find();
+  const wishes = await Wish.find().lean();
 
   //Loopa genom listan och visa dem
   return (

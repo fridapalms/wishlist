@@ -7,7 +7,7 @@ export const PurchasedWishes = async () => {
   await connectDB();
 
   //Hitta alla wishes i db
-  const wishes = await Wish.find({ purchased: true });
+  const wishes = await Wish.find({ purchased: true }).lean();
 
   //Loopa genom listan och visa dem
   return (

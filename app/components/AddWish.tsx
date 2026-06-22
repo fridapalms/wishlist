@@ -15,7 +15,7 @@ export const AddWish = async () => {
         </label>
         <select name="wishlistId" className="border-[#BF5048] border p-1.5">
           {wishlists.map((list) => (
-            <option key={list._id} value={list._id}>
+            <option key={list._id} value={list._id.toString()}>
               {list.name}
             </option>
           ))}
@@ -27,7 +27,7 @@ export const AddWish = async () => {
         </label>
         <select name="categoryId" className="border-[#BF5048] border p-1.5">
           {categories.map((category) => (
-            <option key={category._id} value={category._id}>
+            <option key={category._id} value={category._id.toString()}>
               {category.name}
             </option>
           ))}

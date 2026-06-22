@@ -3,6 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { TogglePurchased } from "./TogglePurchased";
 import { DeleteWish } from "./DeleteWish";
+import { Star } from "lucide-react";
+import { PriorityLow } from "./PriorityLow";
+import { PriorityMedium } from "./PriorityMedium";
+import { PriorityHigh } from "./PriorityHigh";
 
 type WishCardProps = {
   w: WishType;
@@ -16,9 +20,9 @@ export const WishCard = ({ w }: WishCardProps) => {
           <Image alt={w.title} src={w.imageUrl} width={200} height={200} className="w-70 h-100 object-cover object-top opacity-25"></Image>
           <div>
             <h1 className="font-bold opacity-25">{w.title}</h1>
-            <h1 className="font-bold opacity-25">Pris: {w.price} kr</h1>
+            <h1 className="opacity-25">Price: {w.price} kr</h1>
             <p className="opacity-25">{w.notes}</p>
-            <h3 className="font-bold opacity-100">Köpt</h3>
+            <h3 className="font-bold opacity-100">Already purchased!</h3>
           </div>
         </Link>
       ) : (
@@ -26,15 +30,17 @@ export const WishCard = ({ w }: WishCardProps) => {
           <Image alt={w.title} src={w.imageUrl} width={200} height={200} className="w-70 h-100 object-cover object-top"></Image>
           <div>
             <h1 className="font-bold">{w.title}</h1>
-            <h1 className="font-bold">Pris: {w.price} kr</h1>
+            <h1>Price: {w.price} kr</h1>
             <p>{w.notes}</p>
-            <h3>Prioritet: {w.priority}</h3>
+            {w.priority === "low" && <PriorityLow />}
+            {w.priority === "medium" && <PriorityMedium />}
+            {w.priority === "high" && <PriorityHigh />}
           </div>
         </Link>
       )}
       <div className="flex gap-2">
-        <TogglePurchased id={w._id} />
-        <DeleteWish id={w._id} />
+        <TogglePurchased id={w._id.toString()} />
+        <DeleteWish id={w._id.toString()} />
       </div>
     </div>
   );
