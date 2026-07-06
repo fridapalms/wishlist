@@ -1,8 +1,8 @@
 export const Footer = () => {
   return (
-    <div className="w-full bg-[var(--color-blue)] flex justify-center p-4 border-t-6 border-[var(--color-pink)]">
+    <div className="w-auto bg-[var(--color-blue)] flex justify-center p-4 mx-4 rounded-lg">
       <div className="flex flex-col items-center w-full text-[var(--color-darkred)]">
-        <h2 className="text-2xl leading-none font-semibold">WishList</h2>
+        <h2 className="text-xl leading-none font-medium">A portfolio project by Frida Palm</h2>
       </div>
     </div>
   );

@@ -16,10 +16,10 @@ const categoryColors: Record<string, string> = {
 
 export const FavoriteCard = ({ f }: FavoriteCardProps) => {
   return (
-    <div className="border-2 border-dashed border-[var(--color-borderbeige)] rounded-sm p-3 flex flex-col flex-1 min-w-[250px] gap-3 justify-between text-start">
+    <div className="border-2 border-dashed border-[var(--color-beige-800)] rounded-sm p-3 flex flex-col flex-1 min-w-[250px] gap-3 justify-between text-start">
       <div className="flex items-center gap-2">
         <div className={`w-[25px] h-[25px] ${categoryColors[f.category]}`}></div>
-        <h2 className="font-semibold text-2xl text-[var(--color-darkred)]">{f.category}</h2>
+        <h2 className="font-semibold text-2xl text-[var(--color-darkgreen)]">{f.category}</h2>
       </div>
 
       <Link href={f.link} className="flex flex-col gap-3 h-full">

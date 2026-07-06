@@ -14,8 +14,11 @@
   --color-lightpink: #ffe1ee;
   --color-yellow: #fddb74;
   --color-lightyellow: #fef1c8;
-  --color-borderbeige: #decaaf;
-  --color-bgbeige: #f6f0e7;
+  --color-beige-200: #fdfaf6;
+  --color-beige-400: #fcf7f1;
+  --color-beige-600: #f6f0e7;
+  --color-beige-800: #e2d7c9;
+  --color-borderbeige: #e2d7c9;
 }
 
 @theme inline {

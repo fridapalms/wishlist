@@ -53,20 +53,20 @@ export default async function RootLayout({
   return (
     <html lang="en" className={generalSans.variable}>
       <body className="font-sans">
-        <main className="h-screen flex flex-col w-full bg-[var(--color-bgbeige)]">
-          <div className="flex">
+        <main className="h-screen flex flex-col w-full bg-[var(--color-beige-200)]">
+          <div className="flex bg-[var(--color-beige-200)] p-4">
             {session && (
               <div className="w-1/6">
                 <Sidebar />
               </div>
             )}
 
-            <div className={session ? "flex w-5/6 bg-[var(--color-bgbeige)] flex-col" : "w-full h-screen bg-[var(--color-bgbeige)] flex-col"}>
+            <div className={session ? "flex w-5/6 flex-col" : "w-full h-screen flex-col"}>
               <Navbar />
               <div>{children}</div>
+              <Footer />
             </div>
           </div>
-          <Footer />
         </main>
       </body>
     </html>

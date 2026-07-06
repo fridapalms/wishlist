@@ -3,16 +3,15 @@ import Image from "next/image";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 import { AllFavorites } from "./AllFavorites";
-import { AddFavorite } from "./AddFavorite";
 
 export const WelcomeMessage = async () => {
   const session = await auth();
   return (
-    <div className="flex flex-col gap-10 p-6 w-full">
+    <div className="flex flex-col gap-16 p-8 w-full">
       <div className="flex lg:flex-row flex-col w-full">
-        <div className="flex flex-col text-start gap-10 items-start justify-center p-16 bg-[var(--color-lightyellow)] lg:w-1/2 w-full h-[500px] lg:rounded-l-xl rounded-t-xl">
+        <div className="flex flex-col text-start gap-10 items-start justify-center md:p-16 p-8 bg-[var(--color-lightyellow)] lg:w-1/2 w-full min-h-[500px] lg:rounded-l-xl rounded-t-xl">
           <h1 className="text-4xl text-start font-semibold text-[var(--color-green)]">
-            collect what makes you <span className="bg-[var(--color-lightpink)] p-1">happy</span>
+            collect what makes you <span className="bg-[var(--color-lightpink)] p-0.5">happy</span>
           </h1>
           <p>Organize your wishes, plan for the future and keep track of the things you love.</p>
           <Link href={"/add"} className="flex flex-row gap-2 items-center justify-center text-[var(--color-green)] p-2 transition delay-150 ease-in-out border-2 border-dashed border-[var(--color-green)] rounded hover:bg-[var(--color-yellow)]">
@@ -24,9 +23,7 @@ export const WelcomeMessage = async () => {
           <Image alt="wand illustration" src="/wand.png" width={300} height={300} className="w-full max-w-[300px] object-cover"></Image>
         </div>
       </div>
-      <h1 className="text-3xl text-start font-semibold text-[var(--color-darkred)]">our july favorites</h1>
       <AllFavorites />
-      <AddFavorite />
     </div>
   );
 };
