@@ -12,8 +12,8 @@ export const DeleteWish = ({ id }: DeleteWishProps) => {
       onClick={() => {
         deleteWish(id);
       }}
-      className="flex flex-1 flex-row gap-2 items-center justify-center text-[#BF5048] border p-1.5 transition delay-150 ease-in-out hover:bg-[#F9F4E7]">
-      Delete
+      className="flex flex-1 flex-row gap-2 items-center justify-center text-[var(--color-darkgreen)] p-2 transition delay-100 ease-in-out hover:bg-[var(--color-pink)] bg-[var(--color-lightpink)] text-large font-medium text-large rounded-lg font-medium">
+      DELETE
     </button>
   );
 };

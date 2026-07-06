@@ -30,9 +30,9 @@ const menuItems = [
 export const Sidebar = async () => {
   const session = await auth();
   return (
-    <div className="bg-[var(--color-green)] rounded-lg flex flex-col gap-6 justify-between items-center md:py-12 py-6 text-[#353333] h-full min-h-screen">
+    <div className="bg-[var(--color-green)] rounded-lg flex flex-col gap-6 justify-between items-center md:py-12 py-6 h-full min-h-screen">
       <div className="flex flex-col gap-6">
-        <Link href={"/add"} className="flex flex-row gap-2 items-center justify-center text-[var(--color-lightyellow)] p-2 transition delay-150 ease-in-out border-2 border-dashed border-[var(--color-lightyellow)] rounded hover:bg-[var(--color-darkgreen)]">
+        <Link href={"/add"} className="flex flex-row gap-2 items-center justify-center text-[var(--color-lightyellow)] p-2 xl:pr-4 transition delay-150 ease-in-out border-2 border-dashed border-[var(--color-lightyellow)] rounded hover:bg-[var(--color-darkgreen)]">
           <Plus />
           <span className="hidden xl:block font-semibold">ADD WISH</span>
         </Link>

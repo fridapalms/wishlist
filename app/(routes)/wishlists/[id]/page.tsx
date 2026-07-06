@@ -2,6 +2,8 @@ import { WishCard } from "@/app/components/WishCard";
 import { connectDB } from "@/app/lib/db";
 import { Wish } from "@/app/models/Wish";
 import { WishList } from "@/app/models/WishList";
+import { Plus } from "lucide-react";
+import Link from "next/link";
 
 type WishesByWishlistProps = {
   params: Promise<{
@@ -21,22 +23,24 @@ export const WishesByWishlist = async ({ params }: WishesByWishlistProps) => {
 
   if (!wishlist)
     return (
-      <div className="flex flex-wrap gap-5 p-6">
-        <h3 className="text-[#BF5048] font-semibold text-2xl">Oops, something went wrong, no wishlist found.</h3>
+      <div className="flex flex-col gap-8 md:p-16 p-4">
+        <h1 className="text-3xl text-start font-semibold text-[var(--color-darkgreen)]">Oops, something went wrong, no wishlist found.</h1>
       </div>
     );
 
   //Loopa genom listan och visa dem
   return (
-    <div className="flex flex-col gap-5 p-6">
-      <h3 className="text-[#BF5048] font-semibold text-2xl">{wishlist.name}</h3>
-      <div className="flex flex-wrap gap-5">
+    <div className="flex flex-col gap-8 md:p-16 p-4">
+      <h1 className="text-3xl text-start font-semibold text-[var(--color-darkgreen)]">{wishlist.name}</h1>
+      <div className="flex flex-row flex-wrap gap-5 justify-start w-full">
         {wishes.map((w) => (
-          <div key={w._id}>
-            <WishCard w={w} />
-          </div>
+          <WishCard w={w} key={w._id} />
         ))}
       </div>
+      <Link href={"/add"} className="flex flex-row gap-2 items-center justify-center text-[var(--color-green)] p-2 transition delay-150 ease-in-out border-2 border-dashed border-[var(--color-green)] rounded hover:bg-[var(--color-yellow)]">
+        <Plus />
+        <span className="font-semibold text-xl">ADD WISH</span>
+      </Link>
     </div>
   );
 };

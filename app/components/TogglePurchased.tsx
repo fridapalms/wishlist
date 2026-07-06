@@ -12,8 +12,8 @@ export const TogglePurchased = ({ id }: TogglePurchasedProps) => {
       onClick={() => {
         togglePurchase(id);
       }}
-      className="flex flex-1 flex-row gap-2 items-center justify-center text-[#BF5048] border p-1.5 transition delay-150 ease-in-out hover:bg-[#F9F4E7]">
-      Status
+      className="flex flex-1 flex-row gap-2 items-center justify-center text-[var(--color-darkgreen)] p-2 transition delay-100 ease-in-out hover:bg-[var(--color-yellow)] bg-[var(--color-lightyellow)] text-large font-medium text-large rounded-lg font-medium">
+      STATUS
     </button>
   );
 };

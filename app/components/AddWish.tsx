@@ -9,7 +9,7 @@ export const AddWish = async () => {
 
   //Formulär för att lägga till wish
   return (
-    <form action={createWish} className="flex flex-col gap-3">
+    <form action={createWish} className="flex flex-col gap-4 border-2 border-dashed border-[var(--color-green)] rounded p-8">
       <div className="flex flex-row flex-wrap gap-2 items-center">
         <label htmlFor="wishlistId" className="font-semibold">
           Wishlist:
@@ -80,7 +80,7 @@ export const AddWish = async () => {
         <input type="text" name="notes" placeholder="Notes.." className="border-[var(--color-beige-800)] border p-2 pl-4 rounded-full bg-[var(--color-beige-600)]" />
       </div>
       <div className="flex flex-row flex-wrap gap-2 items-center">
-        <button type="submit" className="flex flex-row gap-2 items-center justify-center text-[var(--color-lightyellow)] p-2 transition delay-150 ease-in-out rounded-full hover:bg-[var(--color-darkgreen)] bg-[var(--color-green)] text-large font-semibold">
+        <button type="submit" className="flex flex-row gap-2 items-center justify-center text-[var(--color-lightyellow)] p-2 px-4 transition delay-100 ease-in-out rounded-full hover:bg-[var(--color-darkgreen)] bg-[var(--color-green)] text-large font-semibold">
           <Plus /> ADD WISH
         </button>
       </div>

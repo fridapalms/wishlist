@@ -16,7 +16,7 @@ export const AllLists = async () => {
       {wishlists.map((w) => (
         <div key={w._id}>
           <Link href={`/wishlists/${w._id}`}>
-            <div className="bg-[var(--color-lightyellow)] hover:bg-[var(--color-yellow)] rounded-full p-4 flex flex-col justify-center items-center text-center gap-3 w-[250px] h-[250px] text-[var(--color-darkgreen)]">
+            <div className="bg-[var(--color-lightyellow)] transition delay-100 ease-in-out hover:bg-[var(--color-yellow)] rounded-full p-4 flex flex-col justify-center items-center text-center gap-3 w-[250px] h-[250px] text-[var(--color-darkgreen)]">
               <div>
                 <h1 className="font-semibold text-3xl text-[var(--color-green)]">{w.name}</h1>
               </div>

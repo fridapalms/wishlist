@@ -13,8 +13,8 @@ export const WelcomeMessage = async () => {
           <h1 className="text-4xl text-start font-semibold text-[var(--color-green)]">
             Collect what makes you <span className="bg-[var(--color-lightpink)] p-0.5">happy</span>
           </h1>
-          <p>Organize your wishes, plan for the future and keep track of the things you love.</p>
-          <Link href={"/add"} className="flex flex-row gap-2 items-center justify-center text-[var(--color-green)] p-2 transition delay-150 ease-in-out border-2 border-dashed border-[var(--color-green)] rounded hover:bg-[var(--color-yellow)]">
+          <p className="text-lg">Organize your wishes, plan for the future and keep track of the things you love.</p>
+          <Link href={"/add"} className="flex flex-row gap-2 items-center justify-center text-[var(--color-green)] p-2 px-4 transition delay-150 ease-in-out border-2 border-dashed border-[var(--color-green)] rounded hover:bg-[var(--color-yellow)]">
             <Plus />
             <span className="font-semibold text-xl">ADD WISH</span>
           </Link>

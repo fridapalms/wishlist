@@ -25,7 +25,7 @@ export const FavoriteCard = ({ f }: FavoriteCardProps) => {
       <Link href={f.link} className="flex flex-col gap-3 h-full">
         <Image alt={f.title} src={f.imageUrl} width={200} height={200} className="w-full aspect-[1/1] object-cover rounded-lg"></Image>
         <div className="flex flex-col justify-between h-full">
-          <h1 className="font-semibold text-lg text-[var(--color-darkred)]">{f.title}</h1>
+          <h1 className="font-semibold text-xl text-[var(--color-darkred)]">{f.title}</h1>
         </div>
       </Link>
     </div>
