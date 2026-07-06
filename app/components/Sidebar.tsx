@@ -11,7 +11,7 @@ const menuItems = [
   },
   {
     icon: FolderHeart,
-    title: "My wishlists",
+    title: "Wishlists",
     href: "/wishlists",
   },
   {
@@ -29,17 +29,17 @@ const menuItems = [
 export const Sidebar = async () => {
   const session = await auth();
   return (
-    <div className="bg-[var(--color-green)] flex flex-col gap-9 justify-start items-center lg:items-start pt-8 lg:p-8 text-[#353333] h-full min-h-screen">
-      <Link href={"/add"} className="flex flex-row gap-2 items-center justify-center text-[var(--color-darkred)] p-2 transition delay-150 ease-in-out bg-[var(--color-yellow)] hover:bg-[var(--color-red)]">
+    <div className="bg-[var(--color-green)] rounded-lg m-4 flex flex-col gap-9 justify-start items-center pt-10 text-[#353333] h-full min-h-screen">
+      <Link href={"/add"} className="flex flex-row gap-2 items-center justify-center text-[var(--color-lightyellow)] p-2 transition delay-150 ease-in-out border-2 border-dashed border-[var(--color-lightyellow)] rounded hover:bg-[var(--color-darkgreen)]">
         <Plus />
-        <span className="hidden lg:block font-semibold">ADD WISH</span>
+        <span className="hidden xl:block font-semibold">ADD WISH</span>
       </Link>
       {menuItems.map((i) => {
         const Icon = i.icon;
         return (
-          <Link key={i.title} href={i.href} className="flex flex-row gap-2 items-center text-[var(--color-darkred)]">
+          <Link key={i.title} href={i.href} className="flex flex-row gap-2 text-[var(--color-lightyellow)]">
             <Icon />
-            <span className="hidden lg:block">{i.title}</span>
+            <span className="hidden xl:block font-medium text-md">{i.title}</span>
           </Link>
         );
       })}

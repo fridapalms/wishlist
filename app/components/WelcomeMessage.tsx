@@ -1,21 +1,32 @@
 import { auth } from "@/auth";
-import { AllFavorites } from "./AllFavorites";
 import Image from "next/image";
+import { Plus } from "lucide-react";
+import Link from "next/link";
+import { AllFavorites } from "./AllFavorites";
 import { AddFavorite } from "./AddFavorite";
 
 export const WelcomeMessage = async () => {
   const session = await auth();
   return (
     <div className="flex flex-col gap-10 p-6 w-full">
-      <div className="flex flex-col gap-5">
-        <h1 className="text-3xl font-semibold text-black">Welcome, {session?.user?.name}!</h1>
-        <p>Use the sidebar to navigate between wishlists, categories and adding your new wishes.</p>
+      <div className="flex lg:flex-row flex-col w-full">
+        <div className="flex flex-col text-start gap-10 items-start justify-center p-16 bg-[var(--color-lightyellow)] lg:w-1/2 w-full h-[500px] lg:rounded-l-xl rounded-t-xl">
+          <h1 className="text-4xl text-start font-semibold text-[var(--color-green)]">
+            collect what makes you <span className="bg-[var(--color-lightpink)] p-1">happy</span>
+          </h1>
+          <p>Organize your wishes, plan for the future and keep track of the things you love.</p>
+          <Link href={"/add"} className="flex flex-row gap-2 items-center justify-center text-[var(--color-green)] p-2 transition delay-150 ease-in-out border-2 border-dashed border-[var(--color-green)] rounded hover:bg-[var(--color-yellow)]">
+            <Plus />
+            <span className="font-semibold text-xl">ADD WISH</span>
+          </Link>
+        </div>
+        <div className="flex items-center justify-center bg-[var(--color-lightblue)] lg:w-1/2 w-full h-[500px] p-8 lg:rounded-r-xl rounded-b-xl">
+          <Image alt="wand illustration" src="/wand.png" width={300} height={300} className="w-full max-w-[300px] object-cover"></Image>
+        </div>
       </div>
-      <div className="flex flex-col gap-5">
-        <h3 className="text-black font-semibold text-2xl">Our monthly favorites</h3>
-        <Image alt="monthly favorites" src="/july.png" width={1920} height={1080} className="w-full max-w-[1920px] aspect-[16/9] object-cover"></Image>
-        <AllFavorites />
-      </div>
+      <h1 className="text-3xl text-start font-semibold text-[var(--color-darkred)]">our july favorites</h1>
+      <AllFavorites />
+      <AddFavorite />
     </div>
   );
 };

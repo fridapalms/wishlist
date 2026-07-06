@@ -1,19 +1,41 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "./components/Navbar";
 import { Sidebar } from "./components/Sidebar";
 import { Footer } from "./components/Footer";
 import { auth } from "@/auth";
+import localFont from "next/font/local";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const generalSans = localFont({
+  src: [
+    {
+      path: "./fonts/GeneralSans-Light.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "./fonts/GeneralSans-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/GeneralSans-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/GeneralSans-Semibold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "./fonts/GeneralSans-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-general-sans",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -29,10 +51,9 @@ export default async function RootLayout({
   const session = await auth();
 
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
-      <body>
+    <html lang="en" className={generalSans.variable}>
+      <body className="font-sans">
         <main className="h-screen flex flex-col w-full bg-[var(--color-bgbeige)]">
-          <Navbar />
           <div className="flex">
             {session && (
               <div className="w-1/6">
@@ -40,7 +61,10 @@ export default async function RootLayout({
               </div>
             )}
 
-            <div className={session ? "flex w-5/6 bg-[var(--color-bgbeige)]" : "w-full h-screen bg-[var(--color-bgbeige)]"}>{children}</div>
+            <div className={session ? "flex w-5/6 bg-[var(--color-bgbeige)] flex-col" : "w-full h-screen bg-[var(--color-bgbeige)] flex-col"}>
+              <Navbar />
+              <div>{children}</div>
+            </div>
           </div>
           <Footer />
         </main>

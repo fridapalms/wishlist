@@ -11,7 +11,7 @@ export const AllFavorites = async () => {
 
   //Loopa genom listan och visa dem
   return (
-    <div className="flex flex-row flex-wrap gap-5 justify-start">
+    <div className="flex flex-row flex-wrap gap-5 justify-start w-full">
       {favorites.map((f) => (
         <FavoriteCard key={f._id} f={f} />
       ))}
