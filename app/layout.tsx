@@ -63,7 +63,7 @@ export default async function RootLayout({
 
             <div className={session ? "flex w-5/6 flex-col" : "w-full h-screen flex-col"}>
               <Navbar />
-              <div>{children}</div>
+              <div className="p-8 h-full">{children}</div>
               <Footer />
             </div>
           </div>

@@ -6,7 +6,7 @@ type FavoriteCardProps = {
   f: FavoriteType;
 };
 
-const categoryColors: Record<string, string> = {
+export const categoryColors: Record<string, string> = {
   Beauty: "bg-[var(--color-pink)]",
   Home: "bg-[var(--color-yellow)]",
   Fashion: "bg-[var(--color-lightgreen)]",

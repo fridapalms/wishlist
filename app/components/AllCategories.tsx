@@ -2,6 +2,7 @@ import { connectDB } from "../lib/db";
 import { CategoryType } from "../models/Category";
 import Link from "next/link";
 import { getCategories } from "../services/getCategories";
+import { categoryColors } from "./FavoriteCard";
 
 export const AllCategories = async () => {
   //Anslut till databas
@@ -16,9 +17,9 @@ export const AllCategories = async () => {
       {categories.map((c) => (
         <div key={c._id}>
           <Link href={`/categories/${c._id}`}>
-            <div className="bg-[#BF5048] rounded-sm p-4 flex flex-col justify-center items-center gap-3 w-[250px] h-[250px] text-[#353333]">
+            <div className={`${categoryColors[c.name]} rounded-full p-4 flex flex-col justify-center items-center text-center gap-3 w-[250px] h-[250px] text-[var(--color-darkgreen)]`}>
               <div>
-                <h1 className="font-bold text-3xl text-[#F9F4E7]">{c.name}</h1>
+                <h1 className={`font-semibold text-3xl ${c.name === "Lifestyle" ? "text-[var(--color-lightyellow)]" : "text-[var(--color-green)]"}`}>{c.name}</h1>
               </div>
             </div>
           </Link>
