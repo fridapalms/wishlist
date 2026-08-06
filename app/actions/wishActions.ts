@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { connectDB } from "../lib/db";
 import { Wish } from "../models/Wish";
+import { redirect } from "next/navigation";
 
 export const createWish = async (formData: FormData) => {
   //Anslut till databas
@@ -20,7 +21,7 @@ export const createWish = async (formData: FormData) => {
   const wishlistId = formData.get("wishlistId") as string;
   const categoryId = formData.get("categoryId") as string;
 
-  await Wish.create({
+  const wish = await Wish.create({
     title: title,
     price: price,
     link: link,
@@ -33,7 +34,8 @@ export const createWish = async (formData: FormData) => {
   });
 
   //Rendera om
-  revalidatePath("/");
+  revalidatePath(`/wishlists/${wish.wishlistId}`);
+  redirect(`/wishlists/${wish.wishlistId}`);
 };
 
 export const togglePurchase = async (id: string) => {
