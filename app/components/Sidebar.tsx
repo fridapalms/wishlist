@@ -47,7 +47,6 @@ export const Sidebar = async () => {
         })}
         {session && <LogoutButton />}
       </div>
-      <Image alt="wand illustration" src="/dandelion.png" width={100} height={100} className="w-[50px] lg:w-full max-w-[100px] object-cover "></Image>
     </div>
   );
 };
