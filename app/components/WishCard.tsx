@@ -13,15 +13,15 @@ type WishCardProps = {
 
 export const WishCard = ({ w }: WishCardProps) => {
   return (
-    <div className="border-2 border-dashed border-[var(--color-beige-800)] rounded-sm p-3 flex flex-col flex-1 min-w-[270px] gap-3 text-start">
+    <div className={`border-2 border-dashed border-[var(--color-beige-800)] ${w.purchased ? "bg-[var(--color-lightpink)]" : ""} rounded-sm p-3 flex flex-col w-[260px] gap-3 text-start`}>
       <Link href={w.link} className="flex flex-col gap-3 h-full">
-        <div className={`w-full h-[500px] overflow-hidden rounded-lg flex items-center justify-center bg-white ${w.purchased ? "opacity-25" : ""} `}>
+        <div className={`w-full h-[350px] overflow-hidden rounded-lg flex items-center justify-center bg-white ${w.purchased ? "opacity-50" : ""} `}>
           <Image alt={w.title} src={w.imageUrl} width={500} height={500} className="w-full object-contain"></Image>
         </div>
         <div className="flex flex-col gap-2 h-[150px] justify-between">
-          <h1 className="font-semibold text-xl text-[var(--color-darkred)]">{w.title}</h1>
+          <h1 className={`font-semibold text-xl text-[var(--color-darkgreen)] ${w.purchased ? "opacity-50" : ""}`}>{w.title}</h1>
           <div className="flex flex-col gap-2">
-            <h2 className="opacity-25">Price: {w.price} kr</h2>
+            <h2 className="opacity-50">Price: {w.price} kr</h2>
             {w.purchased ? (
               <h3 className="font-bold opacity-100">Already purchased!</h3>
             ) : (
